@@ -14,238 +14,92 @@
       overflow: hidden;
     }
 
-    /* ---------- POEMA CENTRAL ---------- */
-    .poema {
+    iframe.bg-video {
       position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 28px;
-      line-height: 1.5;
-      text-align: center;
-      color: white;
-      width: 70%;
-      z-index: 10;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+      z-index: -1;
     }
 
-    /* ---------- TEXTOS Y POPUPS ---------- */
-    .center-text {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 48px;
-      font-weight: bold;
-      text-shadow: 0 0 8px magenta, 0 0 12px cyan;
-      z-index: 20;
-    }
-
-    #errorPopup, #glitchBox, #popupLATOCO, #poemaBox, #imgBox,
-    #imgPopup2, #imgPopup3, #talvezBox, #videoPopup, #optionsBox {
-      position: fixed;
-      background: #111;
-      border: 3px solid magenta;
-      padding: 10px;
-      font-family: monospace;
-      color: white;
-      z-index: 50;
-    }
-
-    #errorPopup {
-      bottom: 20px;
-      right: 20px;
-      border-color: red;
-      font-size: 32px;
-      box-shadow: 0 0 15px red;
-      animation: flicker 1s infinite;
-    }
-
-    #glitchBox {
-      bottom: 20px;
-      left: 20px;
-      font-size: 22px;
-      box-shadow: 0 0 10px magenta, 0 0 15px cyan;
-      animation: glitch-flicker 1s infinite;
-    }
-
-    .glitch-text {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      font-size: 28px;
-      font-weight: bold;
-      text-shadow: 2px 0 magenta, -2px 0 cyan;
-      animation: glitch 1s infinite;
-      z-index: 100;
-    }
-
-    #poemaBox {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: #111;
-      color: #0f0;
-      font-size: 20px;
-      text-align: center;
-      border: 3px solid red;
-      box-shadow: 0 0 20px red;
-      animation: flicker 1.2s infinite;
-    }
-
-    #imgBox {
-      bottom: 20px;
-      right: 20px;
-      width: 250px;
-      background: black;
-      border-color: magenta;
-      box-shadow: 0 0 12px magenta, 0 0 15px cyan;
-      animation: glitch 1.5s infinite;
-    }
-
-    #imgBox img,
-    #imgPopup2 img,
-    #imgPopup3 img {
+    .pasaje {
+      display: none;
       width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    #popupLATOCO {
-      bottom: 40px;
-      right: 40px;
-      font-size: 24px;
+      height: 100vh;
+      position: relative;
       text-align: center;
-      font-weight: bold;
-      animation: glitchBox 1s infinite;
+      overflow: hidden;
     }
 
-    #imgPopup2 {
-      top: 60px;
-      right: 20px;
-      width: 250px;
-      animation: glitchImg 1.5s infinite;
-    }
-
-    #imgPopup3 {
-      top: 40px;
-      right: 40px;
-      width: 280px;
-      animation: flicker 1.5s infinite;
-    }
-
-    #talvezBox {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 50px;
-      font-weight: bold;
-      padding: 15px 25px;
-      background: rgba(0,0,0,0.8);
-      border: 3px solid magenta;
-      box-shadow: 0 0 12px magenta, 0 0 18px cyan;
-      text-shadow: 2px 2px magenta, -2px -2px cyan;
-      animation: popout 1.5s infinite;
-    }
-
-    #bg {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-image: url("https://i.pinimg.com/736x/aa/7c/47/aa7c47f6902e22e3e7afdb5eeb2bb2b6.jpg");
-      background-size: cover;
-      background-position: center;
-      z-index: -2;
-    }
-
-    #optionsBox {
-      bottom: 20px;
-      left: 20px;
-      border: 2px solid magenta;
-      font-size: 26px;
-      box-shadow: 0 0 10px magenta, 0 0 15px cyan;
-      animation: flicker 1s infinite;
-    }
-
-    #videoPopup {
-      display: block;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.6);
-      z-index: 999;
-    }
-
-    .popup-content {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      background: #000;
-      padding: 5px;
-      border: 3px solid red;
-      box-shadow: 0 0 20px red;
-    }
-
-    .close {
-      color: white;
-      float: right;
-      font-size: 28px;
-      cursor: pointer;
-    }
-    .close:hover { color: red; }
+    .activo { display: block; }
 
     a {
       color: magenta;
       text-decoration: none;
-      transition: all 0.3s;
+      font-weight: bold;
+      transition: all 0.2s ease;
     }
     a:hover {
       color: cyan;
       text-shadow: 0 0 5px magenta, 0 0 7px cyan;
     }
 
+    /* ---------- TEXTOS ---------- */
+    .poema {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70%;
+      font-size: 28px;
+      line-height: 1.5;
+    }
+
+    .center-text {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 48px;
+      font-weight: bold;
+      text-shadow: 0 0 8px magenta, 0 0 12px cyan;
+    }
+
+    .glitch-text {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 50px;
+      font-weight: bold;
+      text-shadow: 2px 0 magenta, -2px 0 cyan;
+      animation: glitch 1s infinite;
+    }
+
+    .options {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: monospace;
+      background: rgba(0,0,0,0.7);
+      border: 2px solid magenta;
+      padding: 10px 20px;
+      font-size: 22px;
+      box-shadow: 0 0 10px magenta, 0 0 15px cyan;
+      animation: flicker 1s infinite;
+    }
+
     /* ---------- ANIMACIONES ---------- */
     @keyframes flicker {
-      0%, 100% { opacity: 1; }
+      0%,100% { opacity: 1; }
       50% { opacity: 0.85; }
     }
 
-    @keyframes glitch-flicker {
-      0% { opacity: 1; transform: translate(0,0); }
-      20% { opacity: 0.9; transform: translate(-1px,1px); }
-      40% { opacity: 1; transform: translate(1px,-1px); }
-      60% { opacity: 0.8; transform: translate(-2px,0); }
-      80% { opacity: 1; transform: translate(2px,2px); }
-      100% { opacity: 1; transform: translate(0,0); }
-    }
-
     @keyframes glitch {
-      0% { text-shadow: 2px 0 magenta, -2px 0 cyan; }
-      20% { text-shadow: -2px 0 magenta, 2px 0 cyan; }
-      40% { text-shadow: 2px 2px magenta, -2px -2px cyan; }
-      60% { text-shadow: -2px -2px magenta, 2px 2px cyan; }
-      80% { text-shadow: 2px -2px magenta, -2px 2px cyan; }
-      100% { text-shadow: 2px 0 magenta, -2px 0 cyan; }
-    }
-
-    @keyframes glitchBox {
-      0% { transform: translate(0,0); }
-      25% { transform: translate(-2px,2px); }
-      50% { transform: translate(2px,-2px); }
-      75% { transform: translate(-1px,1px); }
-      100% { transform: translate(0,0); }
-    }
-
-    @keyframes glitchImg {
-      0% { transform: translate(0,0); opacity: 1; }
-      25% { transform: translate(-2px,2px); opacity: 0.9; }
-      50% { transform: translate(2px,-2px); opacity: 1; }
-      75% { transform: translate(-1px,1px); opacity: 0.85; }
-      100% { transform: translate(0,0); opacity: 1; }
-    }
-
-    @keyframes popout {
-      0% { transform: translate(-50%, -50%) scale(1); }
-      50% { transform: translate(-50%, -50%) scale(1.15); }
-      100% { transform: translate(-50%, -50%) scale(1); }
+      0% { text-shadow: 2px 0 magenta, -2px 0 cyan; transform: translate(-50%, -50%); }
+      20% { text-shadow: -2px 0 magenta, 2px 0 cyan; transform: translate(-52%, -48%); }
+      40% { text-shadow: 2px 2px magenta, -2px -2px cyan; transform: translate(-48%, -52%); }
+      60% { text-shadow: -2px -2px magenta, 2px 2px cyan; transform: translate(-50%, -50%); }
+      80% { text-shadow: 2px -2px magenta, -2px 2px cyan; transform: translate(-49%, -51%); }
+      100% { text-shadow: 2px 0 magenta, -2px 0 cyan; transform: translate(-50%, -50%); }
     }
 
     @keyframes page-glitch {
@@ -257,99 +111,48 @@
     }
   </style>
 </head>
-
 <body>
 
-  <!-- Fondo -->
-  <div id="bg"></div>
+  <!-- PASAJE 1: INICIO -->
+  <div id="inicio" class="pasaje activo">
+    <iframe class="bg-video"
+      src="https://www.youtube.com/embed/0dpzhMMFk5U?autoplay=1&mute=1&loop=1&playlist=0dpzhMMFk5U&controls=0&rel=0&modestbranding=1&showinfo=0"
+      allow="autoplay; fullscreen">
+    </iframe>
 
-  <!-- Video de fondo -->
-  <iframe src="https://www.youtube.com/embed/0dpzhMMFk5U?autoplay=1&mute=1&loop=1&playlist=0dpzhMMFk5U&controls=0&rel=0&modestbranding=1&showinfo=0"
-          frameborder="0"
-          allow="autoplay; fullscreen"
-          style="position:fixed; top:0; left:0; width:100%; height:100%; border:none; z-index:-1;">
-  </iframe>
+    <div class="poema">
+      Hay una piedra rota en la raíz<br>
+      ¿Puedes sentirla?<br>
+      Está susurrando<br>
+      ¿Ya la escuchaste?<br>
+      Nadie está preparado para ver su rostro<br>
+      No estás en esta imagen, pero ella te contiene.
+    </div>
 
-  <!-- Poema central -->
-  <div class="poema">
-    Hay una piedra rota en la raíz<br>
-    ¿Puedes sentirla?<br>
-    Está susurrando<br>
-    ¿Ya la escuchaste?<br>
-    Nadie está preparado para ver su rostro<br>
-    No estás en esta imagen, pero ella te contiene.
-  </div>
-
-  <!-- Textos y popups -->
-  <div id="errorPopup">
-    <a href="#">CONTEMPLO</a><br>
-    <a href="#">ME ACERCO</a><br>
-    <a href="#" id="laToco">LA TOCO</a>
-  </div>
-
-  <div id="glitchBox">
-    TAL VEZ<br>...
-  </div>
-
-  <div class="center-text">ERES TÚ?</div>
-
-  <div class="glitch-text">QUIERO VER MI ROSTRO</div>
-
-  <div id="poemaBox">
-    AQUI<br>DONDE BUSCAS<br>EL ERROR<br>EL ROSTRO<br><br>
-    AQUI<br>DONDE BUSCAS<br>NO HAY SALIDA DEL MARCO<br>REPITES EL ERROR
-  </div>
-
-  <div id="imgBox">
-    <img src="https://i.pinimg.com/736x/1f/8b/09/1f8b098f1b385af1c2e5a4f5ba8ce1d2.jpg" alt="">
-  </div>
-
-  <div id="imgPopup2">
-    <img src="https://i.pinimg.com/736x/1d/2a/65/1d2a657b0fa95880f6229bdd6e2fc88d.jpg" alt="">
-  </div>
-
-  <div id="imgPopup3">
-    <img src="https://i.pinimg.com/1200x/03/1d/f3/031df375443a8ad82873ee852d09a033.jpg" alt="">
-  </div>
-
-  <div id="talvezBox">TAL VEZ</div>
-
-  <div id="popupLATOCO">
-    <a href="#">LA TOCO</a><br>
-    <a href="#">ME ACERCO</a>
-  </div>
-
-  <!-- Ventana emergente con video -->
-  <div id="videoPopup">
-    <div class="popup-content">
-      <span class="close" onclick="document.getElementById('videoPopup').style.display='none'">&times;</span>
-      <iframe width="560" height="315"
-              src="https://www.youtube.com/embed/udnbNvrVPjc?autoplay=1&mute=1&loop=1&playlist=udnbNvrVPjc&controls=0&rel=0&modestbranding=1&showinfo=0"
-              frameborder="0"
-              allow="autoplay; fullscreen">
-      </iframe>
+    <div class="options">
+      <a href="#" onclick="irAPasaje('la-toco')">LA TOCO</a><br>
+      <a href="#" onclick="irAPasaje('talvez')">TAL VEZ</a>
     </div>
   </div>
 
-  <div id="optionsBox">
-    <a href="#">...</a><br>
-    <a href="#">TAL VEZ</a>
+  <!-- PASAJE 2: LA TOCO -->
+  <div id="la-toco" class="pasaje">
+    <iframe class="bg-video"
+      src="https://www.youtube.com/embed/M0xLi19bHrU?autoplay=1&mute=1&start=35&loop=1&playlist=M0xLi19bHrU&controls=0&rel=0&modestbranding=1&showinfo=0"
+      allow="autoplay; fullscreen">
+    </iframe>
+
+    <div class="center-text">¿ESTÁS CANSADX?</div>
+
+    <div class="options">
+      <a href="#" onclick="irAPasaje('talvez')">TAL VEZ</a><br>
+      <a href="#" onclick="irAPasaje('final')">SEGUIR</a><br>
+      <a href="#" onclick="irAPasaje('inicio')">VOLVER</a>
+    </div>
   </div>
 
-  <div class="glitch-text" style="top: 80%; left: 50%; transform: translate(-50%, -50%); font-size: 50px;">
-    NO TE OLVIDES DE MI NOMBRE
-  </div>
-
-  <script>
-    // Efecto glitch al hacer click en "LA TOCO"
-    document.addEventListener("click", function(e) {
-      if (e.target.textContent.trim().toUpperCase() === "LA TOCO") {
-        document.body.style.animation = "page-glitch 0.5s steps(2, end) 3";
-        setTimeout(() => {
-          document.body.style.animation = "";
-        }, 1500);
-      }
-    });
-  </script>
-</body>
-</html>
+  <!-- PASAJE 3: TAL VEZ -->
+  <div id="talvez" class="pasaje">
+    <iframe class="bg-video"
+      src="https://www.youtube.com/embed/A-1hiFPeKJE?autoplay=1&mute=1&loop=1&playlist=A-1hiFPeKJE&controls=0&rel=0&modestbranding=1&showinfo=0"
+      allow="autoplay; f
