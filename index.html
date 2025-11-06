@@ -1,1 +1,577 @@
+:: StoryTitle
+UNA PIEDRA
+
+
+:: StoryData
+{
+  "ifid": "90256821-7870-4B08-B42B-EA1B75225418",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Untitled Passage",
+  "zoom": 1
+}
+
+
+:: ... {"position":"500,700","size":"100,100"}
+<!-- VIDEO DE FONDO -->
+<iframe
+  src="https://www.youtube.com/embed/sZWL8WSAETY?autoplay=1&mute=1&loop=1&playlist=sZWL8WSAETY&controls=0&rel=0&modestbranding=1&showinfo=0"
+  frameborder="0"
+  allow="autoplay; fullscreen"
+  style="position:fixed; top:0; left:0; width:100%; height:100%; border:none; z-index:-1;">
+</iframe>
+
+<!-- TEXTO CENTRAL [[TAL VEZ]] [[LA TOCO]] -->
+<div id="talvezBox">
+  [[TAL VEZ]]
+</div>
+
+<style>
+#talvezBox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  font-weight: bold;
+  padding: 15px 25px;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  border: 3px solid magenta;
+  box-shadow: 0 0 12px magenta, 0 0 18px cyan;
+  text-shadow: 2px 2px magenta, -2px -2px cyan;
+  font-family: monospace;
+  z-index: 1000;
+  animation: popout 1.5s infinite;
+}
+
+/* efecto “salir de la pantalla” */
+@keyframes popout {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.15); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+</style>
+
+<!-- VENTANA EMERGENTE CON IMAGEN -->
+<div id="imgPopup2">
+  <img src="https://i.pinimg.com/736x/1d/2a/65/1d2a657b0fa95880f6229bdd6e2fc88d.jpg" style="width:100%; height:auto;">
+</div>
+
+<style>
+#imgPopup2 {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  width: 250px;
+  background: #000;
+  border: 3px solid magenta;
+  box-shadow: 0 0 12px magenta, 0 0 15px cyan;
+  z-index: 9999;
+  animation: glitchImg 1.5s infinite;
+}
+
+@keyframes glitchImg {
+  0% { transform: translate(0,0); opacity: 1; }
+  25% { transform: translate(-2px,2px); opacity: 0.9; }
+  50% { transform: translate(2px,-2px); opacity: 1; }
+  75% { transform: translate(-1px,1px); opacity: 0.85; }
+  100% { transform: translate(0,0); opacity: 1; }
+}
+</style>
+
+
+
+
+
+:: CONTEMPLO {"position":"400,300","size":"100,100"}
+<!-- VIDEO DE FONDO -->
+<iframe
+  src="https://www.youtube.com/embed/l2WCmTNVO8c?autoplay=1&mute=1&loop=1&playlist=l2WCmTNVO8c&controls=0&rel=0&modestbranding=1&showinfo=0"
+  frameborder="0"
+  allow="autoplay; fullscreen"
+  style="position:fixed; top:0; left:0; width:100%; height:100%; border:none; z-index:-1;">
+</iframe>
+
+<!-- TEXTO CENTRAL -->
+<div class="center-text">
+  ERES TU?
+</div>
+
+<!-- VENTANA EMERGENTE GLITCH INFERIOR IZQUIERDA -->
+<div id="glitchBox">
+  [[TAL VEZ]]<br>
+  [[...]]
+</div>
+
+<style>
+/* Texto centrado */
+.center-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 8px magenta, 0 0 12px cyan;
+  z-index: 1;
+}
+
+/* Ventana emergente estilo glitch */
+#glitchBox {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #111;
+  border: 3px solid magenta;
+  color: white;
+  font-size: 22px;
+  font-family: monospace;
+  padding: 10px;
+  z-index: 9999;
+  box-shadow: 0 0 10px magenta, 0 0 15px cyan;
+  animation: glitch-flicker 1s infinite;
+}
+
+/* efecto glitch/parpadeo */
+@keyframes glitch-flicker {
+  0% { opacity: 1; transform: translate(0, 0); }
+  20% { opacity: 0.9; transform: translate(-1px, 1px); }
+  40% { opacity: 1; transform: translate(1px, -1px); }
+  60% { opacity: 0.8; transform: translate(-2px, 0); }
+  80% { opacity: 1; transform: translate(2px, 2px); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+</style>
+
+
+
+:: LA TOCO {"position":"825,600","size":"100,100"}
+<!-- FONDO CON IMAGEN -->
+<div id="bg"></div>
+
+<!-- VIDEO EN VENTANA EMERGENTE CENTRAL -->
+<div id="videoPopup">
+  <div class="popup-content">
+    <span class="close" onclick="document.getElementById('videoPopup').style.display='none'">&times;</span>
+    <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/udnbNvrVPjc?autoplay=1&mute=1&loop=1&playlist=udnbNvrVPjc&controls=0&rel=0&modestbranding=1&showinfo=0"
+      frameborder="0"
+      allow="autoplay; fullscreen">
+    </iframe>
+  </div>
+</div>
+
+<!-- NODOS -->
+<div id="optionsBox">
+  [[...]]<br>
+  [[TAL VEZ]]
+</div>
+
+<style>
+/* Imagen de fondo */
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://i.pinimg.com/736x/aa/7c/47/aa7c47f6902e22e3e7afdb5eeb2bb2b6.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+
+/* Ventana emergente con video */
+#videoPopup {
+  display: block; /* aparece automáticamente */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 9999;
+}
+.popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #000;
+  padding: 5px;
+  border: 3px solid red;
+  box-shadow: 0 0 20px red;
+}
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+.close:hover {
+  color: red;
+}
+
+/* Caja de opciones (nodos) */
+#optionsBox {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0,0,0,0.7);
+  border: 2px solid magenta;
+  padding: 10px;
+  font-size: 26px;
+  font-family: monospace;
+  color: white;
+  box-shadow: 0 0 10px magenta, 0 0 15px cyan;
+  animation: flicker 1s infinite;
+  z-index: 1000;
+}
+
+/* Estilo links */
+tw-link {
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 0 5px magenta, 0 0 7px cyan;
+  transition: all 0.2s ease;
+}
+tw-link:hover {
+  color: cyan;
+  text-shadow: -2px 0 magenta, 2px 0 cyan;
+}
+
+/* Animaciones */
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.85; }
+  100% { opacity: 1; }
+}
+@keyframes page-glitch {
+  0% { filter: hue-rotate(0deg) contrast(1); }
+  25% { filter: hue-rotate(45deg) contrast(2); }
+  50% { filter: hue-rotate(-45deg) contrast(3); }
+  75% { filter: hue-rotate(90deg) contrast(1.5); }
+  100% { filter: hue-rotate(0deg) contrast(1); }
+}
+</style>
+
+<script>
+/* Efecto pantalla glitch al hacer click en "LA TOCO" */
+document.addEventListener("click", function(e) {
+  if (e.target.tagName === "TW-LINK" && e.target.textContent.trim() === "LA TOCO") {
+    document.body.style.animation = "page-glitch 0.5s steps(2, end) 3";
+    setTimeout(() => {
+      document.body.style.animation = "";
+    }, 1500);
+  }
+});
+</script>
+
+<div class="glitch-text">
+  NO TE OLVIDES DE MI NOMBRE
+</div>
+
+<style>
+.glitch-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 0 magenta, -2px 0 cyan;
+  animation: glitch 1s infinite;
+  z-index: 1000;
+}
+
+@keyframes glitch {
+  0% { text-shadow: 2px 0 magenta, -2px 0 cyan; transform: translate(-50%, -50%); }
+  20% { text-shadow: -2px 0 magenta, 2px 0 cyan; transform: translate(-52%, -48%); }
+  40% { text-shadow: 2px 2px magenta, -2px -2px cyan; transform: translate(-48%, -52%); }
+  60% { text-shadow: -2px -2px magenta, 2px 2px cyan; transform: translate(-50%, -50%); }
+  80% { text-shadow: 2px -2px magenta, -2px 2px cyan; transform: translate(-49%, -51%); }
+  100% { text-shadow: 2px 0 magenta, -2px 0 cyan; transform: translate(-50%, -50%); }
+}
+</style>
+
+
+
+
+
+:: ME ACERCO {"position":"575,425","size":"100,100"}
+<!-- VIDEO DE FONDO -->
+<iframe
+  src="https://www.youtube.com/embed/A-1hiFPeKJE?autoplay=1&mute=1&loop=1&playlist=A-1hiFPeKJE&controls=0&rel=0&modestbranding=1&showinfo=0"
+  frameborder="0"
+  allow="autoplay; fullscreen"
+  style="position:fixed; top:0; left:0; width:100%; height:100%; border:none; z-index:-1;">
+</iframe>
+
+<!-- TEXTO SUPERIOR IZQUIERDA EN GLITCH -->
+<div class="glitch-text">QUIERO VER MI ROSTRO</div>
+
+<!-- VENTANA EMERGENTE CON TEXTO POÉTICO -->
+<div id="poemaBox">
+  AQUI<br>
+  DONDE BUSCAS<br>
+  EL ERROR<br>
+  EL ROSTRO<br><br>
+  AQUI<br>
+  DONDE BUSCAS<br>
+  NO HAY SALIDA DEL MARCO<br>
+  REPITES EL ERROR
+</div>
+
+<!-- VENTANA EMERGENTE CON IMAGEN -->
+<div id="imgBox">
+  <img src="https://i.pinimg.com/736x/1f/8b/09/1f8b098f1b385af1c2e5a4f5ba8ce1d2.jpg" style="width:100%; height:auto;">
+</div>
+
+<style>
+/* TEXTO GLITCH SUPERIOR IZQUIERDA */
+.glitch-text {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 0 magenta, -2px 0 cyan;
+  animation: glitch 1s infinite;
+  z-index: 999;
+}
+
+/* VENTANA CENTRAL POÉTICA */
+#poemaBox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #111;
+  color: #0f0;
+  font-size: 20px;
+  font-family: monospace;
+  text-align: center;
+  border: 3px solid red;
+  padding: 15px;
+  box-shadow: 0 0 20px red;
+  z-index: 9999;
+  animation: flicker 1.2s infinite;
+}
+
+/* VENTANA CON IMAGEN EN GLITCH */
+#imgBox {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 250px;
+  background: black;
+  border: 3px solid magenta;
+  box-shadow: 0 0 12px magenta, 0 0 15px cyan;
+  z-index: 9999;
+  animation: glitch 1.5s infinite;
+}
+
+/* Animación glitch */
+@keyframes glitch {
+  0% { text-shadow: 2px 0 magenta, -2px 0 cyan; transform: translate(0,0); }
+  20% { text-shadow: -2px 0 magenta, 2px 0 cyan; transform: translate(-2px,2px); }
+  40% { text-shadow: 2px 2px magenta, -2px -2px cyan; transform: translate(2px,-2px); }
+  60% { text-shadow: -2px -2px magenta, 2px 2px cyan; transform: translate(-1px,1px); }
+  80% { text-shadow: 2px -2px magenta, -2px 2px cyan; transform: translate(1px,-1px); }
+  100% { text-shadow: 2px 0 magenta, -2px 0 cyan; transform: translate(0,0); }
+}
+
+/* Animación flicker tipo error */
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.85; }
+  100% { opacity: 1; }
+}
+</style>
+
+[[...]] 
+[[LA TOCO]] 
+
+
+
+:: TAL VEZ {"position":"250,550","size":"100,100"}
+<!-- VIDEO DE FONDO (comienza en 35s) -->
+<a href="javascript:void(0)" onclick="SugarCube.State.display('LA TOCO')">
+<iframe
+  src="https://www.youtube.com/embed/M0xLi19bHrU?autoplay=1&mute=1&start=35&loop=1&playlist=M0xLi19bHrU&controls=0&rel=0&modestbranding=1&showinfo=0"
+  frameborder="0"
+  allow="autoplay; fullscreen"
+  style="position:fixed; top:0; left:0; width:100%; height:100%; border:none; z-index:-1;">
+</iframe>
+</a>
+
+<!-- TEXTO CENTRAL -->
+<div class="center-text">
+  ESTAS CANSADX?
+</div>
+
+<!-- VENTANA EMERGENTE CON IMAGEN -->
+<div id="imgPopup3">
+  <img src="https://i.pinimg.com/1200x/03/1d/f3/031df375443a8ad82873ee852d09a033.jpg" style="width:100%; height:auto;">
+</div>
+
+<style>
+/* Texto central */
+.center-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 0 0 8px magenta, 0 0 12px cyan;
+  z-index: 1000;
+}
+
+/* Ventana emergente imagen */
+#imgPopup3 {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  width: 280px;
+  background: #000;
+  border: 3px solid magenta;
+  padding: 5px;
+  box-shadow: 0 0 12px magenta, 0 0 15px cyan;
+  z-index: 9999;
+  animation: flicker 1.5s infinite;
+}
+
+/* Animaciones */
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.85; }
+  100% { opacity: 1; }
+}
+</style>
+<!-- VENTANA EMERGENTE CON NODO [[LA TOCO]] -->
+<div id="popupLATOCO">
+  [[LA TOCO]]
+  [[ME ACERCO]] 
+</div>
+
+<style>
+#popupLATOCO {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background: #111;
+  border: 3px solid magenta;
+  padding: 15px 20px;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: monospace;
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 12px magenta, 0 0 18px cyan;
+  z-index: 9999;
+  animation: glitchBox 1s infinite;
+}
+
+/* Animación glitch parpadeo */
+@keyframes glitchBox {
+  0% { transform: translate(0,0); text-shadow: 2px 0 magenta, -2px 0 cyan; }
+  25% { transform: translate(-2px,2px); text-shadow: -2px 0 magenta, 2px 0 cyan; }
+  50% { transform: translate(2px,-2px); text-shadow: 2px 2px magenta, -2px -2px cyan; }
+  75% { transform: translate(-1px,1px); text-shadow: -2px -2px magenta, 2px 2px cyan; }
+  100% { transform: translate(0,0); text-shadow: 2px 0 magenta, -2px 0 cyan; }
+}
+</style>
+
+
+
+
+:: Untitled Passage {"position":"700,275","size":"100,100"}
+[[<div class="poema">
+Hay una piedra rota en la raíz<br>
+¿Puedes sentirla?<br>
+Está susurrando<br>
+¿Ya la escuchaste?<br>
+Nadie está preparado para ver su rostro<br>
+No estás en esta imagen, pero ella te contiene.
+</div>
+
+<style>
+.poema {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  line-height: 1.5;
+  text-align: center;
+  color: white;
+  font-weight: 400;
+  font-family: "Georgia", serif;
+  width: 70%;
+} ]]
+<iframe
+  src="https://www.youtube.com/embed/0dpzhMMFk5U?autoplay=1&mute=1&loop=1&playlist=0dpzhMMFk5U&controls=0&rel=0&modestbranding=1&showinfo=0"
+  frameborder="0"
+  allow="autoplay; fullscreen"
+  style="position:fixed; top:0; left:0; width:100%; height:100%; border:none; z-index:-1;">
+</iframe>
+
+<!-- VENTANA EMERGENTE INFERIOR DERECHA -->
+<div id="errorPopup">
+  (text-style:"shadow")[
+    (text-rotate-x:24)+(text-rotate-y:34)[
+      (text-colour:magenta)+(bg:white)[
+        [[CONTEMPLO]]<br>
+        [[ME ACERCO]]<br>
+        [[LA TOCO]]
+      ]
+    ]
+  ]
+</div>
+
+<style>
+#errorPopup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #111;
+  border: 3px solid red;
+  color: magenta;
+  font-size: 50px;
+  font-family: monospace;
+  padding: 12px;
+  z-index: 9999;
+  width: auto;
+  max-width: 260px;
+  text-align: center;
+  box-shadow: 0 0 15px red;
+  animation: flicker 1s infinite;
+}
+
+/* efecto parpadeo tipo error */
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+</style>
+
+
+
+
+:: StoryStylesheet [stylesheet]
+tw-story {
+  background: transparent !important;
+}
+
+
 
